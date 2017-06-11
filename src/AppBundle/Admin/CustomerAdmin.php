@@ -53,4 +53,12 @@ class CustomerAdmin extends AbstractAdmin
         $customer->setCreatedAt(new \DateTime('now'));
         $customer->setUpdatedAt(new \DateTime('now'));
     }
+
+    /**
+     * @param mixed $customer
+     */
+    public function preUpdate($customer)
+    {
+        $customer->setUpdatedAt(new \DateTime('now'));
+    }
 }

@@ -169,10 +169,10 @@ class Address
     /**
      * Set created_at
      *
-     * @param datetime $createdAt
+     * @param \DateTime $createdAt
      * @return Address
      */
-    public function setCreatedAt(datetime $createdAt)
+    public function setCreatedAt(\DateTime $createdAt)
     {
         $this->created_at = $createdAt;
 
@@ -182,7 +182,7 @@ class Address
     /**
      * Get created_at
      *
-     * @return datetime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -192,10 +192,10 @@ class Address
     /**
      * Set updated_at
      *
-     * @param datetime $updatedAt
+     * @param \DateTime $updatedAt
      * @return Address
      */
-    public function setUpdatedAt(datetime $updatedAt)
+    public function setUpdatedAt(\DateTime $updatedAt)
     {
         $this->updated_at = $updatedAt;
 
@@ -205,7 +205,7 @@ class Address
     /**
      * Get updated_at
      *
-     * @return datetime
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
