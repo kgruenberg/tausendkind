@@ -1,0 +1,22 @@
+services:
+    app.admin.customer:
+        class: AppBundle\Admin\CustomerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Customer" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Customer
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    app.admin.address:
+        class: AppBundle\Admin\AddressAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Address" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Address
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
