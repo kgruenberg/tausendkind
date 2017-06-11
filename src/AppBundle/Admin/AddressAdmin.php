@@ -13,7 +13,11 @@ class AddressAdmin extends AbstractAdmin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('street', 'string');
+        $formMapper
+            ->add('street', 'text', ['label' => 'Straße'])
+            ->add('postcode', 'text', ['label' => 'Postleitzahl'])
+            ->add('city', 'text', ['label' => 'Stadt'])
+        ;
     }
 
     /**
@@ -21,7 +25,11 @@ class AddressAdmin extends AbstractAdmin
      */
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('street');
+        $datagridMapper
+            ->add('street')
+            ->add('postcode')
+            ->add('city')
+        ;
     }
 
     /**
@@ -29,7 +37,13 @@ class AddressAdmin extends AbstractAdmin
      */
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('street');
+        $listMapper
+            ->addIdentifier('street')
+            ->addIdentifier('postcode')
+            ->addIdentifier('city')
+            ->addIdentifier('created_at')
+            ->addIdentifier('updated_at')
+        ;
     }
 
     /**
@@ -37,6 +51,7 @@ class AddressAdmin extends AbstractAdmin
      */
     public function prePersist($address)
     {
+        $address->setCustomerId(1);
         $address->setCreatedAt(new \DateTime('now'));
         $address->setUpdatedAt(new \DateTime('now'));
     }

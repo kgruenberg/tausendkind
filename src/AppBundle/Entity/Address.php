@@ -77,10 +77,10 @@ class Address
     /**
      * Set customer_id
      *
-     * @param integer $customerId
+     * @param int $customerId
      * @return Address
      */
-    public function setCustomerId(integer $customerId)
+    public function setCustomerId(int $customerId)
     {
         $this->customer_id = $customerId;
 

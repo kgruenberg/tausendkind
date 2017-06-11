@@ -15,10 +15,10 @@ class CustomerAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('customer_number', 'integer', array('label' => 'Kundennummer'))
-            ->add('prefix', 'text', array('label' => 'Namensvorsatz'))
-            ->add('firstname', 'text', array('label' => 'Vorname'))
-            ->add('lastname', 'text', array('label' => 'Nachname'));
+            ->add('customer_number', 'entity', ['label' => 'Kundennummer'])
+            ->add('prefix', 'text', ['label' => 'Namensvorsatz'])
+            ->add('firstname', 'text', ['label' => 'Vorname'])
+            ->add('lastname', 'text', ['label' => 'Nachname']);
     }
 
     /**
@@ -42,7 +42,8 @@ class CustomerAdmin extends AbstractAdmin
             ->addIdentifier('firstname')
             ->addIdentifier('lastname')
             ->addIdentifier('created_at')
-            ->addIdentifier('updated_at');
+            ->addIdentifier('updated_at')
+        ;
     }
 
     /**
